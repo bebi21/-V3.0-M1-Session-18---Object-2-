@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Bài 2: Viết chương trình tạo đối tượng student có cặp key và value tương ứng như dưới đây, sau đó khởi tạo đối tượng newStudent có các thuộc tính tương tự (value tự điền). Sau đó tạo mảng “students” để chứa chúng. Cuối cùng truy xuất các thuộc tính của đối tượng “newStudent” sau khi thêm vào mảng “students” -->
+    <script>
+      let student = {
+        id: 1,
+        name: "nguyen van a",
+        gender: "Nam",
+        age: 20,
+        mark: 8,
+      };
+      let newStudent = {
+        id: 2,
+        name: "nguyen van b",
+        gender: "Nm",
+        age: 21,
+        mark: 6,
+      };
+      let students = [];
+      students.push(student, newStudent);
+      console.log(students);
+      console.log(students[1].id);
+    </script>
+  </body>
+</html>

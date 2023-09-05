@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Bài 3: Tạo một đối tượng User chưa thông tin người dùng bao gồm: tên, email, địa chỉ, điện thoại. Tạo class Admin kế thừa từ class User. Thêm thuộc tính “role” vào 2 đối tượng Admin (value=1) và User (value =0)
+
+Tạo danh sách người dùng (dạng mảng) và thêm vào 3 user, 1 admin
+
+Xóa người dùng thông qua tên của họ (không xóa được admin)
+
+Sửa thông tin người dùng thông qua id (không sửa được thông tin admin)
+
+Thêm 1 nick admin vào mảng danh sách người dùng. Sau đó tìm kiếm toàn bộ thông tin các tài khoản là admin và in ra
+
+ -->
+    <script>
+      let user = {
+        id: 0,
+        name: "a",
+        email: "asdas",
+        addrester: "asdasd",
+        number: 0,
+      };
+      let admin = {
+        id: 1,
+        name: "a",
+        email: "asdas",
+        addrester: "asdasd",
+        number: 0,
+      };
+      let list = [];
+      list.push(user, admin);
+      console.log(list);
+    </script>
+  </body>
+</html>

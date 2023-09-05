@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Bài 4: Tạo thêm đối tượng “newStudent2” với các thuộc tính tương tự như đối tượng “newStudent” với value bất kỳ. Sau đó thêm vào mảng “students” (ở bài 2). Tính điểm trung bình của các học sinh trong mảng students trên. Nếu trên 7.5 thì đánh giá lớp khá, từ 5 đến 7.5 thì đánh giá lớp trung bình, dưới 5 là lớp yếu -->
+    <script>
+      let student = {
+        id: 1,
+        name: "nguyen van a",
+        gender: "Nam",
+        age: 20,
+        mark: 8,
+      };
+      let newStudent = {
+        id: 2,
+        name: "nguyen van1 b",
+        gender: "Nm",
+        age: 21,
+        mark: 6,
+      };
+      let newStudent2 = {
+        id: 3,
+        name: "nguyen van c",
+        gender: "N",
+        age: 22,
+        mark: 8,
+      };
+      let students = [];
+      students.push(student, newStudent, newStudent2);
+      function kt(params) {
+        let tb = (params[0].mark + params[1].mark + params[2].mark) / 3;
+        console.log(tb);
+        if (tb > 7.5) {
+          console.log("hoc sinh kha");
+        } else if (tb > 5 && tb <= 7.5) {
+          console.log("hoc sinh  tb");
+        } else {
+          console.log("hs yeu");
+        }
+      }
+      kt(students);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let products = [
+        { id: 1, name: "Milk", count: 100 },
+        { id: 2, name: "Yakult", count: 100 },
+        { id: 3, name: "Butter", count: 100 },
+      ];
+      //Thêm đối tượng có các thuộc tính tương tự các đối tượng có trong mảng “products”
+      products.push(
+        { id: 4, name: "Milka", count: 100 },
+        { id: 5, name: "Milkb", count: 100 }
+      );
+      //Xóa đối tượng có id là 2
+      let remove = products.map((item) => item.id).indexOf(2);
+      products.splice(remove, 1);
+      console.log(products);
+      //Truy vấn đến đối tượng có id là 3, sau đó cập nhật lại giá trị count = 0
+      let change = products.map((item) => item.id).indexOf(3);
+      products[change].count = 3;
+      console.log(products);
+      //   Cho từ khóa “Butter”. Kiểm tra từ khóa có trong mảng “products” hay không? Nếu Có in toàn bộ thông tin, nếu Không hiển thị thông báo “Không có dữ liệu bạn tìm kiếm”
+      let read = products.map((item) => item.name).indexOf("Butter");
+      if (read != -1) {
+        console.log(products[read]);
+      } else {
+        console.log("ko co  phan tu nao");
+      }
+    </script>
+  </body>
+</html>

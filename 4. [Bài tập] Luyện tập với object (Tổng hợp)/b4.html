@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let stores = [
+        { id: 1, name: "Milk", count: 100 },
+        { id: 2, name: "Yakult", count: 100 },
+        { id: 3, name: "Butter", count: 100 },
+      ];
+      let carts = [];
+      let coun = 0;
+      do {
+        let text = prompt("moi nhap vao C/R/U/D/E");
+        if (text == "C") {
+          let name = prompt("moi nhap ten san pham muon mua?");
+          for (let i = 0; i < stores.length; i++) {
+            if (stores[i].name == name) {
+              //kiem tra phan tu co trong carts ko
+              let cartItem = carts.findIndex((item) => {
+                return item.name == name;
+              });
+              if (cartItem > -1) {
+                carts[cartItem].count = carts[cartItem].count + 1;
+              } else {
+                carts.push({ name: name, count: 1 });
+              }
+              stores[i].count = stores[i].count - 1;
+              coun++;
+            }
+          }
+          if (coun < 1) {
+            console.log("ko co san pham trong stores");
+          } else {
+            console.log(carts);
+          }
+          coun = 0;
+        } else if (text == "R") {
+          console.log(stores);
+          console.log(carts);
+        } else if (text == "U") {
+          let positive = +prompt("vi tri can update");
+          if (positive < carts.length && positive >= 0) {
+            console.log(carts[positive]);
+            let productCoun = +prompt("moi ban thay doi so luong");
+            let storesItem = stores.findIndex((item) => {
+              return item.name == carts[positive].name;
+            });
+            if (productCoun <= stores[storesItem].count) {
+              stores[storesItem].count =
+                stores[storesItem].count + carts[positive].count;
+              carts[positive].count = productCoun;
+              stores[storesItem].count = stores[storesItem].count - productCoun;
+              console.log(carts[positive]);
+            } else {
+              console.log(
+                `trong kho ko du hang chi con lai ${stores[storesItem].count}`
+              );
+            }
+          } else {
+            console.log("ko co vi tri trong mang");
+          }
+        } else if (text == "D") {
+          console.log(carts);
+          let dele = +prompt("vi tri muon xoa");
+          let storeItem = stores.findIndex((item) => {
+            return item.name == carts[dele].name;
+          });
+          stores[storeItem].count = stores[storeItem].count + carts[dele].count;
+          carts.splice(dele, 1);
+          console.log(carts);
+        } else if (text == "E") {
+          break;
+        }
+      } while (coun >= 0);
+    </script>
+  </body>
+</html>

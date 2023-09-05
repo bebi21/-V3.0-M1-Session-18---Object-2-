@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let student = {
+        id: 1,
+        name: "nguyen van a",
+        gender: "Nam",
+        age: 20,
+        mark: 2,
+      };
+      let newStudent = {
+        id: 2,
+        name: "nguyen van b",
+        gender: "Nm",
+        age: 21,
+        mark: 6,
+      };
+      let students = [];
+      students.push(student, newStudent);
+      function kt(param1) {
+        if (param1[1].mark > param1[0].mark) {
+          console.log(param1[1]);
+        } else {
+          console.log(param1[0]);
+        }
+      }
+      kt(students);
+    </script>
+  </body>
+</html>
